@@ -4,32 +4,31 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_weight="1"
+    android:background="#00BCD4"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="242dp"
         android:layout_height="54dp"
+        android:layout_marginTop="60dp"
         android:background="#3F51B5"
         android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:text="Covidata 2019"
         android:textColor="#000000"
         android:textSize="35sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.06" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="287dp"
         android:layout_height="68dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="80dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="Covidata 2019 helps you to follow live data about covid19 all around the world"
         android:textSize="18sp"
@@ -41,61 +40,62 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
         android:text="App by: Bora MINDAS\n              Amine MRAD\n              Cheick Tidiane"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonGoData"
         android:layout_width="120dp"
         android:layout_height="80dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="110dp"
+        android:layout_marginTop="20dp"
         android:background="#3F51B5"
         android:text="Data"
+        app:layout_constraintEnd_toStartOf="@+id/buttonGoSecret"
+        app:layout_constraintHorizontal_weight="1"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/buttonGoSecret"
         android:layout_width="120dp"
         android:layout_height="80dp"
-        android:layout_marginTop="110dp"
-        android:layout_marginEnd="70dp"
+        android:layout_marginEnd="50dp"
         android:background="#3F51B5"
         android:text="Secret"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonGoData"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintVertical_weight="1" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/buttonGoGraph"
         android:layout_width="120dp"
         android:layout_height="80dp"
-        android:layout_marginStart="70dp"
-        android:layout_marginTop="30dp"
         android:background="#3F51B5"
         android:text="Graph"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonGoData"
+        app:layout_constraintVertical_weight="1" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:text="Made at:"
-        app:layout_constraintStart_toStartOf="@+id/button2"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
+        app:layout_constraintBottom_toTopOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/buttonGoSecret" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="120dp"
-        android:layout_height="240dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="121dp"
+        android:layout_height="90dp"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonGoGraph"
         app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toTopOf="@+id/button2"
-        app:srcCompat="@drawable/Epita" />
+        app:layout_constraintTop_toTopOf="@+id/buttonGoGraph"
+        app:srcCompat="@drawable/epita" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
