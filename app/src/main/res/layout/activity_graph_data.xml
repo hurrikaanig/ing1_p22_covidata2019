@@ -8,9 +8,9 @@
     tools:context=".GraphActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/horizontalList"
         android:layout_width="406dp"
-        android:layout_height="74dp"
+        android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,16 +18,16 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView2"
+        android:id="@+id/ListOfData"
         android:layout_width="408dp"
         android:layout_height="314dp"
         android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+        app:layout_constraintTop_toBottomOf="@+id/horizontalList" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/ConfirmedButton"
         android:layout_width="114dp"
         android:layout_height="60dp"
         android:layout_marginStart="15dp"
@@ -35,25 +35,25 @@
         android:background="#3F51B5"
         android:text="Confirmed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
+        app:layout_constraintTop_toBottomOf="@+id/ListOfData" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/DeathButton"
         android:layout_width="99dp"
         android:layout_height="60dp"
         android:background="#3F51B5"
         android:text="Deaths"
-        app:layout_constraintEnd_toStartOf="@+id/button3"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/button" />
+        app:layout_constraintEnd_toStartOf="@+id/RecoveredButton"
+        app:layout_constraintStart_toEndOf="@+id/ConfirmedButton"
+        app:layout_constraintTop_toTopOf="@+id/ConfirmedButton" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/RecoveredButton"
         android:layout_width="121dp"
         android:layout_height="60dp"
         android:layout_marginEnd="15dp"
         android:background="#3F51B5"
         android:text="Recoveries"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button2" />
+        app:layout_constraintTop_toTopOf="@+id/DeathButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

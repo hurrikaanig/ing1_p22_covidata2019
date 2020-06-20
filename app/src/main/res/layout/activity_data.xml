@@ -38,21 +38,21 @@
         app:layout_constraintTop_toBottomOf="@+id/textView9" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/recovered_country"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
         android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView12"
+        app:layout_constraintEnd_toEndOf="@+id/deaths_country"
         app:layout_constraintTop_toTopOf="@+id/textView13" />
 
     <TextView
-        android:id="@+id/textView12"
+        android:id="@+id/deaths_country"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
         android:textSize="17sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="@+id/confirmed_country"
         app:layout_constraintTop_toTopOf="@+id/textView11" />
 
     <TextView
@@ -81,7 +81,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/confirmed_country"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
@@ -102,10 +102,10 @@
         app:layout_constraintTop_toBottomOf="@+id/CovidData" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/listcountry"
         android:layout_width="409dp"
         android:layout_height="365dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
