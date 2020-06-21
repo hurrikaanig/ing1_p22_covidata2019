@@ -81,7 +81,7 @@ class EvoActivity : AppCompatActivity() {
                             buttonConfirmed.visibility = View.VISIBLE
                             buttonDeath.visibility = View.VISIBLE
                             buttonRecovered.visibility = View.VISIBLE
-                            Toast.makeText(this@EvoActivity, "Choose the type of cases", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@EvoActivity, "Choose the type of cases", Toast.LENGTH_SHORT).show()
                         }
                         listDate2.adapter = DateAdapter(this@EvoActivity, infoList, onItemClickListener)
                         listDate2.setHasFixedSize(true)
@@ -116,7 +116,7 @@ class EvoActivity : AppCompatActivity() {
                             death1 = clickedDate.Deaths
                             recovered1 = clickedDate.Recovered
                             date1 = clickedDate.Date
-                            Toast.makeText(this@EvoActivity, "Choose the second date", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@EvoActivity, "Choose the second date", Toast.LENGTH_SHORT).show()
 
                             service3.getcountryname(theCountry).enqueue(call3)
                         }
@@ -147,7 +147,7 @@ class EvoActivity : AppCompatActivity() {
                             val clickedcountry : Country = countryList[clickedRowView.tag as Int]
                             theCountry = clickedcountry.Country
                             Countryname.text = theCountry
-                            Toast.makeText(this@EvoActivity, "Choose the first date", Toast.LENGTH_LONG).show()
+                            Toast.makeText(this@EvoActivity, "Choose the first date", Toast.LENGTH_SHORT).show()
                             service2.getcountryname(theCountry).enqueue(call2)
 
                         }
@@ -170,7 +170,7 @@ class EvoActivity : AppCompatActivity() {
                     .setDuration(1500).start()
                 ObjectAnimator.ofInt(progresssndate, "progress", confirmed2.toInt())
                     .setDuration(1500).start()
-            if (confirmed1.toInt() > confirmed2.toInt())
+            if (confirmed1.toInt() >= confirmed2.toInt())
             {
                 goodimage.visibility = View.VISIBLE
                 badimage.visibility = View.INVISIBLE
@@ -211,7 +211,7 @@ class EvoActivity : AppCompatActivity() {
                     .setDuration(1500).start()
                 ObjectAnimator.ofInt(progresssndate, "progress", recovered2.toInt())
                     .setDuration(1500).start()
-            if (recovered1.toInt() < recovered2.toInt())
+            if (recovered1.toInt() <= recovered2.toInt())
             {
                 goodimage.visibility = View.VISIBLE
                 badimage.visibility = View.INVISIBLE
@@ -222,7 +222,7 @@ class EvoActivity : AppCompatActivity() {
                 badimage.visibility = View.VISIBLE
             }
         }
-        Toast.makeText(this, "Choose a country", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Choose a country", Toast.LENGTH_SHORT).show()
         service.getinfo().enqueue(call)
 
     }
