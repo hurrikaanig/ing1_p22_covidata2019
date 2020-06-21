@@ -34,7 +34,7 @@ class DateAdapter(val context : Activity, val data : List<CasesByCountry>, val o
         val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
         val formatter = SimpleDateFormat("dd.MM.yyyy HH:mm")
         val output = formatter.format(parser.parse(date.Date))
-        holder.nameDate.text = output
+        holder.nameDate.text = output.substring(0, 10)
         holder.itemView.tag = position
     }
 }

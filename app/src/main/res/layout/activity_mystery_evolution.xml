@@ -21,35 +21,36 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/countrylistEvo"
-        android:layout_width="418dp"
-        android:layout_height="128dp"
+        android:layout_width="400dp"
+        android:layout_height="105dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/dateone"
-        android:layout_width="119dp"
-        android:layout_height="53dp"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
         android:layout_marginStart="50dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/datetwo" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/datetwo"
-        android:layout_width="117dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="50dp"
+        android:layout_marginBottom="5dp"
         app:layout_constraintBottom_toTopOf="@+id/recovButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/progresssndate" />
 
     <ImageView
         android:id="@+id/badimage"
-        android:layout_width="170dp"
-        android:layout_height="163dp"
+        android:layout_width="176dp"
+        android:layout_height="95dp"
+        android:layout_marginBottom="50dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,8 +59,9 @@
 
     <ImageView
         android:id="@+id/goodimage"
-        android:layout_width="170dp"
-        android:layout_height="162dp"
+        android:layout_width="174dp"
+        android:layout_height="91dp"
+        android:layout_marginBottom="50dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,7 +73,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
+        android:layout_marginTop="20dp"
         android:text="Confirmed :"
+        android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Countrynamemystery" />
 
@@ -81,6 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="80dp"
         android:text="Confirmed :"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="@+id/infoview1"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -130,7 +135,7 @@
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="167dp"
         android:layout_height="22dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:scaleY="2"
         app:layout_constraintEnd_toEndOf="parent"
@@ -138,11 +143,12 @@
 
     <TextView
         android:id="@+id/Countrynamemystery"
-        android:layout_width="96dp"
-        android:layout_height="29dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Country Name"
         android:textAlignment="center"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/countrylistEvo" />

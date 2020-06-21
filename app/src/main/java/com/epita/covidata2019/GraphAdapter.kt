@@ -34,7 +34,7 @@ class GraphAdapter(val context : Activity, val data : List<CasesByCountry>, val 
         val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
         val formatter = SimpleDateFormat("dd.MM.yyyy HH:mm")
         val output = formatter.format(parser.parse(info.Date))
-        holder.dateView.text = output
+        holder.dateView.text = output.substring(0, 10)
         holder.progress.max = 100000
         if (disp == 1)
         {
