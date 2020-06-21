@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#00BCD4"
+    android:background="@drawable/background"
     tools:context=".GraphActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -27,37 +27,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nameCountrygraph" />
 
-    <Button
-        android:id="@+id/ConfirmedButton"
-        android:layout_width="114dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="60dp"
-        android:background="#3F51B5"
-        android:text="Confirmed"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ListOfData" />
-
-    <Button
-        android:id="@+id/DeathButton"
-        android:layout_width="99dp"
-        android:layout_height="60dp"
-        android:background="#3F51B5"
-        android:text="Deaths"
-        app:layout_constraintEnd_toStartOf="@+id/RecoveredButton"
-        app:layout_constraintStart_toEndOf="@+id/ConfirmedButton"
-        app:layout_constraintTop_toTopOf="@+id/ConfirmedButton" />
-
-    <Button
-        android:id="@+id/RecoveredButton"
-        android:layout_width="121dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="15dp"
-        android:background="#3F51B5"
-        android:text="Recoveries"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/DeathButton" />
-
     <TextView
         android:id="@+id/nameCountrygraph"
         android:layout_width="121dp"
@@ -66,4 +35,65 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/horizontalList" />
+
+    <ImageButton
+        android:id="@+id/ConfirmedButton"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="15dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ListOfData"
+        app:srcCompat="@drawable/man" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Confirmed"
+        app:layout_constraintEnd_toEndOf="@+id/ConfirmedButton"
+        app:layout_constraintStart_toStartOf="@+id/ConfirmedButton"
+        app:layout_constraintTop_toBottomOf="@+id/ConfirmedButton" />
+
+    <ImageButton
+        android:id="@+id/DeathButton"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toStartOf="@+id/RecoveredButton"
+        app:layout_constraintStart_toEndOf="@+id/ConfirmedButton"
+        app:layout_constraintTop_toTopOf="@+id/ConfirmedButton"
+        app:srcCompat="@drawable/scared" />
+
+    <ImageButton
+        android:id="@+id/RecoveredButton"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="15dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/DeathButton"
+        app:srcCompat="@drawable/medicine" />
+
+    <TextView
+        android:id="@+id/Death"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Death"
+        app:layout_constraintEnd_toEndOf="@+id/DeathButton"
+        app:layout_constraintStart_toStartOf="@+id/DeathButton"
+        app:layout_constraintTop_toBottomOf="@+id/DeathButton" />
+
+    <TextView
+        android:id="@+id/Recovery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recovered"
+        app:layout_constraintEnd_toEndOf="@+id/RecoveredButton"
+        app:layout_constraintStart_toStartOf="@+id/RecoveredButton"
+        app:layout_constraintTop_toBottomOf="@+id/RecoveredButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -26,9 +27,9 @@ class GraphActivity : AppCompatActivity() {
         var theCountry : String = ""
 
         val countryname : TextView = findViewById(R.id.nameCountrygraph)
-        val buttonConfirmed : Button = findViewById(R.id.ConfirmedButton)
-        val buttonDeath : Button = findViewById(R.id.DeathButton)
-        val buttonRecovered : Button = findViewById(R.id.RecoveredButton)
+        val buttonConfirmed : ImageButton = findViewById(R.id.ConfirmedButton)
+        val buttonDeath : ImageButton = findViewById(R.id.DeathButton)
+        val buttonRecovered : ImageButton = findViewById(R.id.RecoveredButton)
         var disp : Int = 1
 
         val listcountry : RecyclerView = findViewById(R.id.horizontalList)

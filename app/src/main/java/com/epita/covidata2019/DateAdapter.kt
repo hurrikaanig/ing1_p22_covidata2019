@@ -1,11 +1,13 @@
 package com.epita.covidata2019
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import java.text.SimpleDateFormat
 
 class DateAdapter(val context : Activity, val data : List<CasesByCountry>, val onItemClickListener: View.OnClickListener) : RecyclerView.Adapter<DateAdapter.ViewHolder>(){
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
@@ -23,9 +25,16 @@ class DateAdapter(val context : Activity, val data : List<CasesByCountry>, val o
         return data.size
     }
 
+    @SuppressLint("SimpleDateFormat")
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val date : CasesByCountry = data[position]
-        holder.nameDate.text = date.Date
+
+
+
+        val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+        val formatter = SimpleDateFormat("dd.MM.yyyy HH:mm")
+        val output = formatter.format(parser.parse(date.Date))
+        holder.nameDate.text = output
         holder.itemView.tag = position
     }
 }

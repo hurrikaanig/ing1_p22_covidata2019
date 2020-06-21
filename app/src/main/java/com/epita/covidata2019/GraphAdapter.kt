@@ -1,6 +1,7 @@
 package com.epita.covidata2019
 
 import android.animation.ObjectAnimator
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import java.text.SimpleDateFormat
 
 class GraphAdapter(val context : Activity, val data : List<CasesByCountry>, val disp : Int) : RecyclerView.Adapter<GraphAdapter.Viewholder>() {
     class Viewholder(itemView: View) : RecyclerView.ViewHolder(itemView)
@@ -26,9 +28,13 @@ class GraphAdapter(val context : Activity, val data : List<CasesByCountry>, val 
         return data.size
     }
 
+    @SuppressLint("SimpleDateFormat")
     override fun onBindViewHolder(holder: Viewholder, position: Int) {
         val info : CasesByCountry = data[position]
-        holder.dateView.text = info.Date
+        val parser = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss")
+        val formatter = SimpleDateFormat("dd.MM.yyyy HH:mm")
+        val output = formatter.format(parser.parse(info.Date))
+        holder.dateView.text = output
         holder.progress.max = 100000
         if (disp == 1)
         {
