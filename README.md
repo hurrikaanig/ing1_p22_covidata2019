@@ -2,4 +2,4 @@
 Android Project Covidata2019
 bora.mindas
 amine.mrad
-cheick-d.tidiane
+cheick-tidiane.dia
