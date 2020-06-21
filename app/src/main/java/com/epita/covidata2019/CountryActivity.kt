@@ -52,15 +52,21 @@ class CountryActivity : AppCompatActivity() {
                         {
                             val data : List<CasesByCountry> = response.body()!!
                             var goodDate : Boolean = false
+                            var previousConfirmed : String = "0"
+                            var previousDeath : String = "0"
+                            var previousRecovered : String = "0"
                             for (info in data)
                             {
                                 if (the_date == info.Date)
                                 {
                                     goodDate = true
-                                    confirmed.text = info.Confirmed
-                                    death.text = info.Deaths
-                                    recovered.text = info.Recovered
+                                    confirmed.text = (info.Confirmed.toInt() - previousConfirmed.toInt()).toString()
+                                    death.text = (info.Deaths.toInt() - previousDeath.toInt()).toString()
+                                    recovered.text = (info.Recovered.toInt() - previousRecovered.toInt()).toString()
                                 }
+                                previousConfirmed = info.Confirmed
+                                previousDeath = info.Deaths
+                                previousRecovered = info.Recovered
                             }
                             if (goodDate == false)
                             {
