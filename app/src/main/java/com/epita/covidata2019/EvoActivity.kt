@@ -74,9 +74,22 @@ class EvoActivity : AppCompatActivity() {
 
                         val onItemClickListener = View.OnClickListener{ clickedRowView ->
                             val clickedDate : CasesByCountry = infoList[clickedRowView.tag as Int]
-                            confirmed2 = clickedDate.Confirmed
-                            death2 = clickedDate.Deaths
-                            recovered2 = clickedDate.Recovered
+                            if ((clickedRowView.tag as Int) > 0) {
+                                val clickedDateBefore : CasesByCountry = infoList[(clickedRowView.tag as Int) - 1]
+                                confirmed2 =
+                                    (clickedDate.Confirmed.toInt() - clickedDateBefore.Confirmed.toInt()).toString()
+                                death2 =
+                                    (clickedDate.Deaths.toInt() - clickedDateBefore.Deaths.toInt()).toString()
+                                recovered2 =
+                                    (clickedDate.Recovered.toInt() - clickedDateBefore.Recovered.toInt()).toString()
+                            }
+                            else
+                            {
+                                confirmed2 = clickedDate.Confirmed
+                                death2 = clickedDate.Deaths
+                                recovered2 = clickedDate.Recovered
+                            }
+
                             date2 = clickedDate.Date
                             buttonConfirmed.visibility = View.VISIBLE
                             buttonDeath.visibility = View.VISIBLE
@@ -112,9 +125,23 @@ class EvoActivity : AppCompatActivity() {
 
                         val onItemClickListener = View.OnClickListener{ clickedRowView ->
                             val clickedDate : CasesByCountry = infoList[clickedRowView.tag as Int]
-                            confirmed1 = clickedDate.Confirmed
-                            death1 = clickedDate.Deaths
-                            recovered1 = clickedDate.Recovered
+                            if((clickedRowView.tag as Int) > 0) {
+                                val clickedDateBefore : CasesByCountry = infoList[(clickedRowView.tag as Int) - 1]
+
+                                confirmed1 =
+                                    (clickedDate.Confirmed.toInt() - clickedDateBefore.Confirmed.toInt()).toString()
+                                death1 =
+                                    (clickedDate.Deaths.toInt() - clickedDateBefore.Deaths.toInt()).toString()
+                                recovered1 =
+                                    (clickedDate.Recovered.toInt() - clickedDateBefore.Recovered.toInt()).toString()
+                            }
+                            else
+                            {
+                                confirmed1 = clickedDate.Confirmed
+                                death1 = clickedDate.Deaths
+                                recovered1 = clickedDate.Recovered
+                            }
+
                             date1 = clickedDate.Date
                             Toast.makeText(this@EvoActivity, "Choose the second date", Toast.LENGTH_SHORT).show()
 

@@ -6,6 +6,7 @@ import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
@@ -17,6 +18,9 @@ class GraphAdapter(val context : Activity, val data : List<CasesByCountry>, val 
         val InfoView : TextView = itemView.findViewById(R.id.confirmeditem)
         val dateView : TextView = itemView.findViewById(R.id.dateitem)
         val progress : ProgressBar = itemView.findViewById(R.id.progressBar)
+        val confirmedimg : ImageView = itemView.findViewById(R.id.confirmedImage)
+        val deathimg : ImageView = itemView.findViewById(R.id.imageView4)
+        val  recoveredimg : ImageView = itemView.findViewById(R.id.recoveryImage)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Viewholder {
@@ -39,16 +43,25 @@ class GraphAdapter(val context : Activity, val data : List<CasesByCountry>, val 
         if (disp == 1)
         {
             holder.InfoView.text = info.Confirmed
+            holder.confirmedimg.visibility = View.VISIBLE
+            holder.deathimg.visibility = View.INVISIBLE
+            holder.recoveredimg.visibility = View.INVISIBLE
             ObjectAnimator.ofInt(holder.progress, "progress", info.Confirmed.toInt()).setDuration(1500).start()
         }
         if (disp == 2)
         {
             holder.InfoView.text = info.Deaths
+            holder.confirmedimg.visibility = View.INVISIBLE
+            holder.deathimg.visibility = View.VISIBLE
+            holder.recoveredimg.visibility = View.INVISIBLE
             ObjectAnimator.ofInt(holder.progress, "progress", info.Deaths.toInt()).setDuration(1500).start()
         }
         if (disp == 3)
         {
             holder.InfoView.text = info.Recovered
+            holder.confirmedimg.visibility = View.INVISIBLE
+            holder.deathimg.visibility = View.INVISIBLE
+            holder.recoveredimg.visibility = View.VISIBLE
             ObjectAnimator.ofInt(holder.progress, "progress", info.Deaths.toInt()).setDuration(1500).start()
         }
     }
