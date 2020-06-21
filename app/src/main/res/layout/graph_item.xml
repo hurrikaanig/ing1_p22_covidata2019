@@ -6,15 +6,6 @@
     android:layout_height="100dp">
 
     <TextView
-        android:id="@+id/deathitem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toStartOf="@+id/recovereditem"
-        app:layout_constraintStart_toEndOf="@+id/confirmeditem"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="deaths" />
-
-    <TextView
         android:id="@+id/confirmeditem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -23,21 +14,12 @@
         tools:text="confirmed" />
 
     <TextView
-        android:id="@+id/recovereditem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="recovered" />
-
-    <TextView
         android:id="@+id/dateitem"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/deathitem"
+        app:layout_constraintTop_toTopOf="parent"
         tools:text="date" />
 
     <ProgressBar

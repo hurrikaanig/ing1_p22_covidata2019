@@ -10,7 +10,4 @@ interface GlobalInfoHolder {
 
     @GET("total/country/{name}")
     fun getcountryname(@Path("name") name : String) : Call<List<CasesByCountry>>
-
-    @GET("total/country/{name}")
-    fun getGraphElements(@Path("name") name : String) : Call<GraphElements>
 }

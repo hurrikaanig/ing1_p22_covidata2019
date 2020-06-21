@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,27 +22,12 @@ class GraphActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_graph_data)
 
-        /*
-        var confirmed : Boolean = false
-        var death : Boolean = false
-        var recovered : Boolean = false
+        var theCountry : String = ""
 
-        ConfirmedButton.setOnClickListener{
-            confirmed = true
-            death = false
-            recovered = false
-        }
-        DeathButton.setOnClickListener{
-            confirmed = false
-            death = true
-            recovered = false
-        }
-        RecoveredButton.setOnClickListener{
-            confirmed = false
-            death = false
-            recovered = true
-        }
-         */
+        val buttonConfirmed : Button = findViewById(R.id.ConfirmedButton)
+        val buttonDeath : Button = findViewById(R.id.DeathButton)
+        val buttonRecovered : Button = findViewById(R.id.RecoveredButton)
+        var disp : Int = 1
 
         val listcountry : RecyclerView = findViewById(R.id.horizontalList)
         val listdata : RecyclerView = findViewById(R.id.ListOfData)
@@ -68,10 +55,9 @@ class GraphActivity : AppCompatActivity() {
                         val data : List<CasesByCountry> = response.body()!!
                         val infoList : MutableList<CasesByCountry> = arrayListOf()
                         data.forEach { c -> infoList.add(c) }
-                        listdata.adapter = GraphAdapter(this@GraphActivity, infoList)
+                        listdata.adapter = GraphAdapter(this@GraphActivity, infoList, disp)
                         listdata.setHasFixedSize(true)
                         listdata.layoutManager = LinearLayoutManager(this@GraphActivity)
-                        listdata.addItemDecoration(DividerItemDecoration(this@GraphActivity, LinearLayoutManager.VERTICAL))
                     }
                 }
             }
@@ -92,10 +78,7 @@ class GraphActivity : AppCompatActivity() {
                         data.Countries.forEach { c -> countryList.add(c) }
                         val onItemClickListener = View.OnClickListener{ clickedRowView ->
                             val clickedcountry : Country = countryList[clickedRowView.tag as Int]
-                            //val intent = Intent(this@GraphActivity, CountryActivity::class.java)
-                            //intent.putExtra("nameCountry", clickedcountry.Country)
-                            //startActivity(intent)
-                            Toast.makeText(this@GraphActivity, "clicked : " + clickedcountry.Country, Toast.LENGTH_SHORT).show()
+                            theCountry = clickedcountry.Country
                             service2.getcountryname(clickedcountry.Country).enqueue(call2)
                         }
                         listcountry.adapter = CountryAdapter(this@GraphActivity, countryList, onItemClickListener)
@@ -106,6 +89,22 @@ class GraphActivity : AppCompatActivity() {
                 }
             }
         }
+        buttonConfirmed.setOnClickListener{
+            disp = 1
+            service2.getcountryname(theCountry).enqueue(call2)
+        }
+
+        buttonDeath.setOnClickListener{
+            disp = 2
+            service2.getcountryname(theCountry).enqueue(call2)
+        }
+
+        buttonRecovered.setOnClickListener{
+            disp = 3
+            service2.getcountryname(theCountry).enqueue(call2)
+        }
+
         service.getinfo().enqueue(call)
+
     }
 }

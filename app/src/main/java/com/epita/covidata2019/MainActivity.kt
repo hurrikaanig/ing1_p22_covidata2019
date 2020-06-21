@@ -21,6 +21,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        buttonGoSecret.setOnClickListener{
+            val intent = Intent(this, EvoActivity::class.java)
+            startActivity(intent)
+        }
+
 
 
     }
