@@ -36,4 +36,37 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/dateitem" />
+
+    <ImageView
+        android:id="@+id/confirmedImage"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/dateitem"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/man" />
+
+    <ImageView
+        android:id="@+id/recoveryImage"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/confirmedImage"
+        app:layout_constraintEnd_toEndOf="@+id/confirmedImage"
+        app:layout_constraintStart_toStartOf="@+id/confirmedImage"
+        app:srcCompat="@drawable/medicine" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="100dp"
+        android:layout_height="50dp"
+        android:background="#00FFFFFF"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="@+id/confirmedImage"
+        app:layout_constraintEnd_toEndOf="@+id/confirmedImage"
+        app:layout_constraintStart_toStartOf="@+id/confirmedImage"
+        app:srcCompat="@drawable/scared" />
 </androidx.constraintlayout.widget.ConstraintLayout>
