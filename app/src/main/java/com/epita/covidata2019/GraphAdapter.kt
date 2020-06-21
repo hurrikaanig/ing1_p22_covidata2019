@@ -39,9 +39,9 @@ class GraphAdapter(val context : Activity, val data : List<CasesByCountry>, val 
         val formatter = SimpleDateFormat("dd.MM.yyyy HH:mm")
         val output = formatter.format(parser.parse(info.Date))
         holder.dateView.text = output.substring(0, 10)
-        holder.progress.max = 100000
         if (disp == 1)
         {
+            holder.progress.max = 2000000
             holder.InfoView.text = info.Confirmed
             holder.confirmedimg.visibility = View.VISIBLE
             holder.deathimg.visibility = View.INVISIBLE
@@ -50,6 +50,7 @@ class GraphAdapter(val context : Activity, val data : List<CasesByCountry>, val 
         }
         if (disp == 2)
         {
+            holder.progress.max = 125000
             holder.InfoView.text = info.Deaths
             holder.confirmedimg.visibility = View.INVISIBLE
             holder.deathimg.visibility = View.VISIBLE
@@ -58,6 +59,7 @@ class GraphAdapter(val context : Activity, val data : List<CasesByCountry>, val 
         }
         if (disp == 3)
         {
+            holder.progress.max = 250000
             holder.InfoView.text = info.Recovered
             holder.confirmedimg.visibility = View.INVISIBLE
             holder.deathimg.visibility = View.INVISIBLE

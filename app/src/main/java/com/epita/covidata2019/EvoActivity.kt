@@ -191,8 +191,8 @@ class EvoActivity : AppCompatActivity() {
         buttonConfirmed.setOnClickListener {
                 infoview1.text = "Confirmed : " + confirmed1
                 infoview2.text = "Confirmed : " + confirmed2
-                progressfstdate.max = 100000
-                progresssndate.max = 100000
+                progressfstdate.max = 10000
+                progresssndate.max = 10000
                 ObjectAnimator.ofInt(progressfstdate, "progress", confirmed1.toInt())
                     .setDuration(1500).start()
                 ObjectAnimator.ofInt(progresssndate, "progress", confirmed2.toInt())
@@ -212,13 +212,13 @@ class EvoActivity : AppCompatActivity() {
         buttonDeath.setOnClickListener {
                 infoview1.text = "Death : " + death1
                 infoview2.text = "Death : " + death2
-                progressfstdate.max = 20000
-                progresssndate.max = 20000
+                progressfstdate.max = 5000
+                progresssndate.max = 5000
                 ObjectAnimator.ofInt(progressfstdate, "progress", death1.toInt()).setDuration(1500)
                     .start()
                 ObjectAnimator.ofInt(progresssndate, "progress", death2.toInt()).setDuration(1500)
                     .start()
-            if (death1.toInt() > death2.toInt())
+            if (death1.toInt() >= death2.toInt())
             {
                 goodimage.visibility = View.VISIBLE
                 badimage.visibility = View.INVISIBLE
@@ -232,8 +232,8 @@ class EvoActivity : AppCompatActivity() {
         buttonRecovered.setOnClickListener {
                 infoview1.text = "Recovered : " + recovered1
                 infoview2.text = "Recovered : " + recovered2
-                progressfstdate.max = 50000
-                progresssndate.max = 50000
+                progressfstdate.max = 10000
+                progresssndate.max = 10000
                 ObjectAnimator.ofInt(progressfstdate, "progress", recovered1.toInt())
                     .setDuration(1500).start()
                 ObjectAnimator.ofInt(progresssndate, "progress", recovered2.toInt())
