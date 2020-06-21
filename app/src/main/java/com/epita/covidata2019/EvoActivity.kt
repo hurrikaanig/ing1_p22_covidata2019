@@ -81,6 +81,7 @@ class EvoActivity : AppCompatActivity() {
                             buttonConfirmed.visibility = View.VISIBLE
                             buttonDeath.visibility = View.VISIBLE
                             buttonRecovered.visibility = View.VISIBLE
+                            Toast.makeText(this@EvoActivity, "Choose the type of cases", Toast.LENGTH_LONG).show()
                         }
                         listDate2.adapter = DateAdapter(this@EvoActivity, infoList, onItemClickListener)
                         listDate2.setHasFixedSize(true)
@@ -115,6 +116,8 @@ class EvoActivity : AppCompatActivity() {
                             death1 = clickedDate.Deaths
                             recovered1 = clickedDate.Recovered
                             date1 = clickedDate.Date
+                            Toast.makeText(this@EvoActivity, "Choose the second date", Toast.LENGTH_LONG).show()
+
                             service3.getcountryname(theCountry).enqueue(call3)
                         }
                         listDate1.adapter = DateAdapter(this@EvoActivity, infoList, onItemClickListener)
@@ -144,6 +147,7 @@ class EvoActivity : AppCompatActivity() {
                             val clickedcountry : Country = countryList[clickedRowView.tag as Int]
                             theCountry = clickedcountry.Country
                             Countryname.text = theCountry
+                            Toast.makeText(this@EvoActivity, "Choose the first date", Toast.LENGTH_LONG).show()
                             service2.getcountryname(theCountry).enqueue(call2)
 
                         }
@@ -218,7 +222,7 @@ class EvoActivity : AppCompatActivity() {
                 badimage.visibility = View.VISIBLE
             }
         }
-
+        Toast.makeText(this, "Choose a country", Toast.LENGTH_LONG).show()
         service.getinfo().enqueue(call)
 
     }
