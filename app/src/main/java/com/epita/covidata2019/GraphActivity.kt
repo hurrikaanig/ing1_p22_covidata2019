@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.activity_graph_data.*
+import org.w3c.dom.Text
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -24,6 +25,7 @@ class GraphActivity : AppCompatActivity() {
 
         var theCountry : String = ""
 
+        val countryname : TextView = findViewById(R.id.nameCountrygraph)
         val buttonConfirmed : Button = findViewById(R.id.ConfirmedButton)
         val buttonDeath : Button = findViewById(R.id.DeathButton)
         val buttonRecovered : Button = findViewById(R.id.RecoveredButton)
@@ -79,6 +81,7 @@ class GraphActivity : AppCompatActivity() {
                         val onItemClickListener = View.OnClickListener{ clickedRowView ->
                             val clickedcountry : Country = countryList[clickedRowView.tag as Int]
                             theCountry = clickedcountry.Country
+                            countryname.text = theCountry
                             service2.getcountryname(clickedcountry.Country).enqueue(call2)
                         }
                         listcountry.adapter = CountryAdapter(this@GraphActivity, countryList, onItemClickListener)

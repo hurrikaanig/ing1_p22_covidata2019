@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,6 +23,7 @@ class EvoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_mystery_evolution)
 
+        val Countryname : TextView = findViewById(R.id.Countrynamemystery)
         val GoodScore : ImageView = findViewById(R.id.goodimage)
         val BadScore : ImageView = findViewById(R.id.badimage)
         var theCountry : String = ""
@@ -141,6 +143,7 @@ class EvoActivity : AppCompatActivity() {
                         val onItemClickListener = View.OnClickListener{ clickedRowView ->
                             val clickedcountry : Country = countryList[clickedRowView.tag as Int]
                             theCountry = clickedcountry.Country
+                            Countryname.text = theCountry
                             service2.getcountryname(theCountry).enqueue(call2)
 
                         }

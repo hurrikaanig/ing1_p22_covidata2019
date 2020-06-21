@@ -70,18 +70,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="80dp"
-        android:text="TextView"
+        android:text="Confirmed :"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countrylistEvo" />
+        app:layout_constraintTop_toBottomOf="@+id/Countrynamemystery" />
 
     <TextView
         android:id="@+id/infoview2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="80dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/countrylistEvo" />
+        android:text="Confirmed :"
+        app:layout_constraintBottom_toBottomOf="@+id/infoview1"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/confiButton"
@@ -134,4 +134,15 @@
         android:scaleY="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/infoview2" />
+
+    <TextView
+        android:id="@+id/Countrynamemystery"
+        android:layout_width="96dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="20dp"
+        android:text="Country Name"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/countrylistEvo" />
 </androidx.constraintlayout.widget.ConstraintLayout>
